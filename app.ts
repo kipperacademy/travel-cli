@@ -10,6 +10,7 @@ import { configureTracing } from './tracing.js';
 for (const key of ['OPENAI_API_KEY', 'LOGFIRE_TOKEN']) {
   if (!process.env[key]) throw new Error(`Preencha ${key} no .env.`);
 }
+
 const telemetry = configureTracing();
 const cli = createInterface({ input: stdin, output: stdout });
 const openai = new OpenAI();
